@@ -7,9 +7,9 @@ import org.apache.spark.{SparkConf, SparkContext}
  * @author 赵世敏
  * @date 2022/7/31
  *       1208676641@qq.com
- * @description wc reduce 聚合
+ * @description wc reduceByKey 聚合
  */
-object Spark02_WordCount {
+object Spark03_WordCount {
   def main(args: Array[String]): Unit = {
     // TODO: 建立与spark框架的连接
     val wordCount: SparkConf = new SparkConf().setMaster("local").setAppName("WordCount")
@@ -23,20 +23,12 @@ object Spark02_WordCount {
     println(value1)
     //赋值 1
     val wordToOne: RDD[(String, Int)] = value1.map((_, 1))
-    //3 数据分组   根据单词分组
-    val value2: RDD[(String, Iterable[(String, Int)])] = wordToOne.groupBy(s => s._1)
-    println(value2)
-    //4 数据转换   计数
-    val value3: RDD[(String, Int)] = value2.map {
-      case (k, v) => {
-        v.reduce(
-          (t1, t2) => (t1._1, t2._2 + t2._2)
-        )
-      }
-    }
-    println(value3)
+    //spark框架提供的一个新功能  分组与聚合使用同一个method
+    //reduceByKey : 对相同的 key 的数据  可以对 value 进行reduce 聚合
+    //    wordToOne.reduceByKey((x,y)=>x+y)
+    val value2: RDD[(String, Int)] = wordToOne.reduceByKey(_ + _)
     //5 数据结果打印
-    val tuples: Array[(String, Int)] = value3.collect()
+    val tuples: Array[(String, Int)] = value2.collect()
     println(tuples)
     tuples.foreach(println)
     // TODO: 关闭连接

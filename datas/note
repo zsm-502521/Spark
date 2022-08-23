@@ -1,0 +1,5 @@
+bin/spark-submit \
+--class org.apache.spark.examples.SparkPi \
+--master spark://hadoop102:7077 \
+./examples/jars/spark-examples_2.12-3.0.0.jar \
+10
