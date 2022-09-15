@@ -3,3 +3,9 @@ bin/spark-submit \
 --master spark://hadoop102:7077 \
 ./examples/jars/spark-examples_2.12-3.0.0.jar \
 10
+
+rdd 不会保存数据 指的是数据不会落盘 直接在内存中传输
+one TO one （窄）依赖 父（上游）rdd 的partition最多被子（下游）rdd 的一个rdd的partition 使用
+shuffle（宽）依赖  新的rdd分区数据依赖旧的rdd多个分区数据
+
+任务的数量 == 当前阶段最后一个rdd 的分区数量
