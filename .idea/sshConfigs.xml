@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="hadoop102" id="4f5cdfe0-9308-4e75-be2c-0e9d9b93660e" port="22" nameFormat="DESCRIPTIVE" username="zsm" />
+      <sshConfig authType="PASSWORD" host="hadoop103" id="84238401-8d3a-46d1-a18e-8874ac6b098a" port="22" nameFormat="DESCRIPTIVE" username="zsm" />
+      <sshConfig authType="PASSWORD" host="hadoop104" id="f33495cc-836c-447e-bdc2-22c2b27ed2a6" port="22" nameFormat="DESCRIPTIVE" username="zsm" />
+    </configs>
+  </component>
+</project>

@@ -17,8 +17,10 @@ object Spark01_UDF {
     // TODO: sql
     //创建临时视图
     df.createTempView("user")
-    sparkSession.udf.register()
-    sparkSession.sql("select avg(age)from user").show()
+    sparkSession.udf.register("prefixName",(name:String) => {
+      "Name: " +name
+    })
+    sparkSession.sql("select age,prefixName(username) from user").show()
 
     sparkSession.close()
   }

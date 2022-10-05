@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d247b39b-f530-414a-850d-fb3b98ce4e23" name="hadoop102">
+        <fileTransfer accessType="SFTP" host="hadoop102" port="22" sshConfigId="4f5cdfe0-9308-4e75-be2c-0e9d9b93660e" sshConfig="zsm@hadoop102:22 password">
+          <advancedOptions>
+            <advancedOptions controlEncoding="utf-8" dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="994866ed-834d-4301-a57a-39810433a6d0" name="hadoop103">
+        <fileTransfer accessType="SFTP" host="hadoop103" port="22" sshConfigId="84238401-8d3a-46d1-a18e-8874ac6b098a" sshConfig="zsm@hadoop103:22 password">
+          <advancedOptions>
+            <advancedOptions controlEncoding="utf-8" dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="95b57546-daea-4f9d-b517-f5ea21a5e396" name="hadoop104">
+        <fileTransfer accessType="SFTP" host="hadoop104" port="22" sshConfigId="f33495cc-836c-447e-bdc2-22c2b27ed2a6" sshConfig="zsm@hadoop104:22 password">
+          <advancedOptions>
+            <advancedOptions controlEncoding="utf-8" dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+    <groups>
+      <group>
+        <name>hadoop</name>
+        <servers>
+          <name value="hadoop102" />
+          <name value="hadoop103" />
+          <name value="hadoop104" />
+        </servers>
+      </group>
+    </groups>
+  </component>
+</project>
